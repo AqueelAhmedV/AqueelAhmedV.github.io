@@ -10,27 +10,14 @@
     <title>Aqueel Ahmed Vallanchira</title>
     <style>
       :root {
-        color-scheme: light dark;
-        --bg: #f8f7f3;
-        --surface: #fffdfa;
-        --text: #191815;
-        --muted: #6f6a61;
-        --faint: #d9d4ca;
-        --accent: #8f4f24;
-        --accent-soft: #efe1d4;
-        --max: 760px;
-      }
-
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #171512;
-          --surface: #201d19;
-          --text: #f3eee5;
-          --muted: #b4aa9b;
-          --faint: #39332b;
-          --accent: #f0a56f;
-          --accent-soft: #342317;
-        }
+        color-scheme: light;
+        --bg: #ffffff;
+        --text: #0f172a;
+        --muted: #475569;
+        --soft: #64748b;
+        --faint: #e2e8f0;
+        --hover: #f8fafc;
+        --max: 672px;
       }
 
       * {
@@ -39,9 +26,10 @@
 
       html {
         font-family:
-          ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-        font-size: 18px;
-        line-height: 1.6;
+          ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        font-size: 16px;
+        line-height: 1.7;
         background: var(--bg);
         color: var(--text);
       }
@@ -50,43 +38,59 @@
         margin: 0;
       }
 
+      body::before {
+        content: "";
+        display: block;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          #ef4444,
+          #f97316,
+          #eab308,
+          #22c55e,
+          #06b6d4,
+          #6366f1,
+          #a855f7
+        );
+      }
+
+      ::selection {
+        color: #160404;
+        background: #fef4ad;
+      }
+
       a {
         color: inherit;
-        text-decoration-color: color-mix(in srgb, var(--accent) 65%, transparent);
-        text-decoration-thickness: 0.08em;
-        text-underline-offset: 0.18em;
+        text-decoration: underline;
+        text-underline-offset: 0.14em;
       }
 
       a:hover {
-        color: var(--accent);
+        text-decoration: none;
       }
 
       .page {
         width: min(100% - 32px, var(--max));
         margin: 0 auto;
-        padding: 56px 0 72px;
+        padding: 32px 0 40px;
       }
 
       header {
-        margin-bottom: 56px;
+        margin-bottom: 64px;
       }
 
       nav {
         display: flex;
         flex-wrap: wrap;
         gap: 10px 18px;
-        margin-bottom: 52px;
-        font-family:
-          ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          sans-serif;
-        font-size: 0.78rem;
-        letter-spacing: 0.03em;
-        text-transform: uppercase;
+        margin-bottom: 88px;
+        font-size: 0.875rem;
+        font-weight: 500;
       }
 
       nav a {
         color: var(--muted);
-        text-decoration: none;
+        text-decoration: underline;
       }
 
       nav a:first-child {
@@ -102,20 +106,19 @@
       }
 
       h1 {
-        max-width: 11ch;
-        font-size: clamp(2.7rem, 11vw, 6.1rem);
-        line-height: 0.91;
-        letter-spacing: -0.075em;
+        font-size: clamp(2rem, 7vw, 3.25rem);
+        line-height: 1.05;
+        letter-spacing: -0.035em;
         font-weight: 500;
       }
 
       .intro {
         display: grid;
-        gap: 24px;
-        margin-top: 34px;
-        font-size: clamp(1.14rem, 2.4vw, 1.55rem);
-        line-height: 1.38;
-        letter-spacing: -0.018em;
+        gap: 18px;
+        margin-top: 18px;
+        font-size: 1rem;
+        line-height: 1.75;
+        color: var(--text);
       }
 
       .intro p {
@@ -127,23 +130,20 @@
         flex-wrap: wrap;
         gap: 8px;
         margin-top: 28px;
-        font-family:
-          ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          sans-serif;
-        font-size: 0.82rem;
+        font-size: 0.875rem;
         color: var(--muted);
       }
 
       .pill {
         border: 1px solid var(--faint);
-        border-radius: 999px;
+        border-radius: 0.5rem;
         padding: 4px 10px;
-        background: color-mix(in srgb, var(--surface) 80%, transparent);
+        background: var(--hover);
       }
 
       section {
-        padding: 36px 0;
-        border-top: 1px solid var(--faint);
+        padding: 0;
+        margin: 72px 0;
       }
 
       .section-header {
@@ -154,17 +154,11 @@
       }
 
       h2 {
-        position: sticky;
-        top: 24px;
-        font-family:
-          ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          sans-serif;
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
+        position: static;
+        font-size: 1rem;
+        font-weight: 500;
         line-height: 1.3;
-        text-transform: uppercase;
-        color: var(--muted);
+        color: var(--text);
       }
 
       .stack {
@@ -193,15 +187,12 @@
       h3 {
         font-size: 1.05rem;
         line-height: 1.3;
-        font-weight: 650;
+        font-weight: 600;
       }
 
       .date {
-        font-family:
-          ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          sans-serif;
         font-size: 0.76rem;
-        color: var(--muted);
+        color: var(--soft);
       }
 
       .entry p,
@@ -232,43 +223,33 @@
 
       .project a {
         width: fit-content;
-        font-weight: 650;
+        font-weight: 600;
       }
 
       .project span {
-        font-family:
-          ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          sans-serif;
         font-size: 0.76rem;
         color: var(--muted);
       }
 
-      .note {
-        margin-top: 20px;
-        padding: 18px;
-        border: 1px solid var(--faint);
-        border-radius: 18px;
-        background: var(--accent-soft);
-        color: color-mix(in srgb, var(--text) 84%, var(--accent));
-      }
-
       footer {
-        padding-top: 42px;
-        border-top: 1px solid var(--faint);
+        margin-top: 80px;
+        padding-bottom: 8px;
+        text-align: center;
+        font-size: 0.875rem;
         color: var(--muted);
       }
 
       .contact-links {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 10px 18px;
-        margin-bottom: 18px;
+        margin-bottom: 12px;
       }
 
       @media (max-width: 680px) {
         .page {
           width: min(100% - 28px, var(--max));
-          padding-top: 28px;
         }
 
         nav a:first-child {
@@ -281,9 +262,6 @@
           gap: 18px;
         }
 
-        h2 {
-          position: static;
-        }
       }
     </style>
   </head>
@@ -423,12 +401,6 @@
                 </article>
               </div>
 
-              <p class="note">
-                Earlier, I built a Chrome extension used by 1,000+ students at
-                IIT Kharagpur to shortlist foreign research internship projects.
-                It turned an opaque selection process into a real demand signal,
-                then used that signal to make a sharper decision.
-              </p>
             </div>
           </div>
         </section>
